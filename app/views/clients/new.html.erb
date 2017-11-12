@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<% provide(:title, "Signup") %>
+<html>
+  <div>
+    <h1>Sign Up</h1>
+    <%= form_for @client do |f| %>
+      <p> Client Name:</br> <%= f.text_field :client_name%> </p>
+      <p> Client Type:</br> <%= f.text_field :client_type%> </p>
+      <p> Password:</br> <%= f.password_field :password%> </p>
+      <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+      <%= f.submit :Signup %>
+      <% end %>
+      <% if @client.errors.any? %>
+      <ul>
+        <% for error_message in @client.errors.full_messages %>
+          <li><%= error_message %></li>
+        <% end %>
+      </ul>
+      <% end %>
+  </div>
+</html>

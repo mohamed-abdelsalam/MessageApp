@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<% provide(:title, "Home") %>
+<html>
+  <h2>Hello, <%=@client[:client_name]%></h2>
+  <ul>
+    <h>All Messages</h>
+    <p>Sender Name | Receiver Name | Message Text | Time</p>
+    <ul>
+    <% for message in @message_list %>
+      <li><%= link_to message[:sender_name] + " | " +
+              message[:receiver_name] + " | " +
+              message[:message_text] + " | " +
+              message[:send_time].to_s , message_path(message)%>
+      </li>
+    <% end %>
+    </ul>
+    <p><%= button_to "New Message", new_message_path, method: :get%></p>
+  </ul>
+</html>

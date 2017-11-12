@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<% provide(:title, "Login") %>
+<html>
+  <div>
+    <h1>Log in</h1>
+    <%= form_for :session do |f| %>
+      <p> Client Name:</br> <%= f.text_field :client_name%> </p>
+      <p> Password:</br> <%= f.password_field :password%> </p>
+      <%= f.submit :Login %>
+      <% end %>
+    <p>New user? <%= link_to "Sign up now!", new_client_path %></p>
+  </div>
+</html>

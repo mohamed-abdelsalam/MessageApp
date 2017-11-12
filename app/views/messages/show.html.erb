@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<% provide(:title, "Message") %>
+<html>
+  <div>
+    <h1>Message</h1>
+    <p>Sender Name: <%=@message[:sender_name]%></p>
+    <p>Receiver Name: <%=@message[:receiver_name]%></p>
+    <p>Message Text: <%=@message[:message_text]%></p>
+    <p>Send Time: <%=@message[:send_time]%></p>
+  </div>
+</html>
